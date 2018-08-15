@@ -1,5 +1,5 @@
 [submodule ".emacs.d"]
-	path = .emacs.d
+	path = emacs/.emacs.d
 	url = https://github.com/syl20bnr/spacemacs
 [submodule "tmux/.tmux"]
 	path = tmux/.tmux
