@@ -298,3 +298,6 @@ set -g history-limit 10000
 # start with mouse mode enabled
 set -g mouse on
 
+# move status to top
+set -g status-position top
+
