@@ -57,4 +57,4 @@
 	url = https://github.com/maxbrunsfeld/vim-yankstack.git
 [submodule "zsh/zprezto"]
 	path = zsh/zprezto
-	url = https://github.com/sorin-ionescu/prezto
+	url = https://github.com/sorin-ionescu/prezto.git

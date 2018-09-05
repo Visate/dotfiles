@@ -1,0 +1,21 @@
+Host github
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/github
+
+Host gitlab
+  HostName gitlab.com
+  User git
+  IdentityFile ~/.ssh/gitlab
+
+Host bitbucket
+  HostName bitbucket.org
+  User git
+  IdentityFile ~/.ssh/bitbucket
+
+Host *
+  IdentityFile ~/.ssh/id_ed25519
+  IdentityFile ~/.ssh/id_rsa
+  AddKeysToAgent yes
+  IdentitiesOnly yes
+
