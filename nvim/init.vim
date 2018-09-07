@@ -1,3 +1,3 @@
-source general.vim
-source plugins.vim
+source ~/.config/nvim/general.vim
+source ~/.config/nvim/plugins.vim
 

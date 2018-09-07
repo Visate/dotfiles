@@ -43,9 +43,9 @@ set cmdheight=2
 set hid
 
 " Set vim swap, undo, and backup dirs
-set backupdir=~/.vim/backup//
-set directory=~/.vim/swap//
-set undodir=~/.vim/undo//
+set backupdir=~/.config/nvim/backup//
+set directory=~/.config/nvim/swap//
+set undodir=~/.config/nvim/undo//
 
 " Fix weird backspacing
 set backspace=eol,start,indent
