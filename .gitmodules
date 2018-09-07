@@ -1,4 +1,4 @@
-[submodule ".emacs.d"]
+[submodule "emacs/.emacs.d"]
 	path = emacs/.emacs.d
 	url = https://github.com/syl20bnr/spacemacs.git
 [submodule "tmux/.tmux"]
@@ -55,6 +55,6 @@
 [submodule "nvim/bundle/vim-yankstack"]
 	path = nvim/bundle/vim-yankstack
 	url = https://github.com/maxbrunsfeld/vim-yankstack.git
-[submodule "zsh/zprezto"]
-	path = zsh/zprezto
+[submodule "zsh/.zprezto"]
+	path = zsh/.zprezto
 	url = https://github.com/sorin-ionescu/prezto.git

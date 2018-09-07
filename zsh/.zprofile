@@ -39,6 +39,11 @@ path=(
   $path
 )
 
+fpath=(
+  $fpath
+  "$HOME/.zfunctions"
+)
+
 #
 # Less
 #

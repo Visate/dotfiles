@@ -16,12 +16,9 @@ if [[ -z $SSH_AUTH_SOCK ]]; then
 fi
 
 alias edit="vim"
-alias showall="defaults write com.apple.finder AppleShowAllFiles YES && killall Finder"
-alias hideall="defaults write com.apple.finder AppleShowAllFiles NO && killall Finder"
 alias s="ssh"
 alias cd..="cd .."
 alias rm="rm"
-alias flushdns="sudo killall -HUP mDNSResponder"
 alias t="tmux"
 alias ta="tmux a"
 alias tl="tmux ls"
@@ -33,19 +30,23 @@ function chpwd {
 }
 
 function dev {
-  cd ~/Development/$1
+    cd ~/Development/$1
+}
+
+function dots {
+    cd ~/.dotfiles/$1
 }
 
 alias pydt="python -m doctest -v"
 
 function avenv {
-  if [[ -z $1 && -s venv/bin/activate ]]; then
-      source venv/bin/activate
-  elif [[ ! -z $1 && -s $1/bin/activate ]]; then
-      source $1/bin/activate
-  else
-      echo "Please provide a proper venv folder."
-  fi
+    if [[ -z $1 && -s venv/bin/activate ]]; then
+        source venv/bin/activate
+    elif [[ ! -z $1 && -s $1/bin/activate ]]; then
+        source $1/bin/activate
+    else
+        echo "Please provide a proper venv folder."
+    fi
 }
 
 function genkey {
@@ -77,66 +78,52 @@ function cpkey {
     fi
 }
 
-function desktopicons {
-  defaults write com.apple.finder CreateDesktop $1
-  killall Finder
-}
-
-function restartsynergy {
-  launchctl unload /Library/LaunchAgents/com.symless.synergy.synergy-service.plist
-  sudo killall synergy-core
-  launchctl load /Library/LaunchAgents/com.symless.synergy.synergy-service.plist
-}
-
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
+    eval "$(pyenv init -)"
 fi
-
-source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
-source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
 
 # Set Spaceship ZSH as a prompt
 autoload -U promptinit; promptinit
 prompt spaceship
 
 SPACESHIP_PROMPT_ORDER=(
-  user
-  host
-  jobs
-  dir
-#  git
-#  hg
-#  package
-#  node
-#  ruby
-#  elixir
-#  xcode
-#  swift
-#  golang
-#  php
-#  rust
-#  haskell
-#  julia
-#  docker
-#  aws
-  venv
-#  conda
-#  pyenv
-#  dotnet
-#  ember
-#  kubecontext
-  line_sep
-  exit_code
-  char
+    user
+    host
+    jobs
+    dir
+#    git
+#    hg
+#    package
+#    node
+#    ruby
+#    elixir
+#    xcode
+#    swift
+#    golang
+#    php
+#    rust
+#    haskell
+#    julia
+#    docker
+#    aws
+    venv
+#    conda
+#    pyenv
+#    dotnet
+#    ember
+#    kubecontext
+    line_sep
+    exit_code
+    char
 )
 
 SPACESHIP_RPROMPT_ORDER=(
-  vi_mode
+    vi_mode
 )
 
 # colours: red, blue, green, cyan, yellow, magenta, black, white
@@ -168,3 +155,6 @@ SPACESHIP_GIT_STATUS_COLOR=200
 
 SPACESHIP_EXIT_CODE_SHOW=true
 SPACESHIP_EXIT_CODE_SYMBOL="✘ "
+
+source "${ZDOTDIR:-${HOME}}/.zshrc-`uname`"
+

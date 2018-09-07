@@ -11,10 +11,9 @@ if [[ ( "$SHLVL" -eq 1 && ! -o LOGIN ) && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; t
 fi
 
 export PATH="/usr/local/bin:/usr/local/sbin:$HOME/bin:$PATH"
-export EDITOR="vim"
-export VISUAL="vim"
+export EDITOR="nvim"
+export VISUAL="nvim"
 export PAGER="less"
-export TERM="xterm-256color"
 
 export GOPATH="$HOME/Development/GoProjects"
 export PATH="$GOPATH/bin:$PATH"
