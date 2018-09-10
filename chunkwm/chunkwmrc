@@ -79,3 +79,4 @@ chunkc tiling::rule --owner \"Audio MIDI Setup\" --state float
 chunkc tiling::rule --owner DaisyDisk --state float
 chunkc tiling::rule --owner \"Archive Utility\" --state float
 chunkc tiling::rule --owner \"The Unarchiver\" --state float
+chunkc tiling::rule --owner Alacritty --state tile
