@@ -15,14 +15,15 @@ if [[ -z $SSH_AUTH_SOCK ]]; then
     ssh-add
 fi
 
-alias edit="vim"
-alias s="ssh"
+alias edit="nvim"
 alias cd..="cd .."
 alias rm="rm"
 alias t="tmux"
 alias ta="tmux a"
 alias tl="tmux ls"
-alias gotodev="dev"
+alias s="ssh"
+alias shosts="grep -P '^Host ([^*]+)$' $HOME/.ssh/config | sed 's/Host //'"
+alias aliases="alias | less"
 
 # Run ll when changing working dir
 function chpwd {
