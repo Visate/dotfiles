@@ -28,7 +28,7 @@ focus, grid, swap, warp, warpnf, resize < x               : chunkc tiling::windo
 focus, grid, swap, warp, warpnf, resize < cmd - t         : chunkc set window_float_next 1; osascript -e 'tell application "System Events" to keystroke " " using {control down}'
 focus, grid, swap, warp, warpnf, resize < cmd - c         : chunkc tiling::desktop --create
 focus, grid, swap, warp, warpnf, resize < cmd - x         : chunkc tiling::desktop --annihilate
-focus, grid, swap, warp, warpnf, resize < cmd + shift - r : brew services restart chunkwm; brew services restart skhd
+focus, grid, swap, warp, warpnf, resize < cmd + shift - r : echo -n exclamation | nc -4u -w0 localhost 1738; brew services restart chunkwm; brew services restart skhd
 
 
 # open terminal using helper script
