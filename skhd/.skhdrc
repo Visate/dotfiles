@@ -25,6 +25,7 @@ focus, grid, swap, warp, warpnf, resize < space           : chunkc tiling::deskt
 focus, grid, swap, warp, warpnf, resize < shift - space   : chunkc tiling::desktop --rotate 270
 focus, grid, swap, warp, warpnf, resize < u               : chunkc tiling::desktop --equalize
 focus, grid, swap, warp, warpnf, resize < x               : chunkc tiling::window --close
+focus, grid, swap, warp, warpnf, resize < cmd - f         : chunkc tiling::window --toggle float
 focus, grid, swap, warp, warpnf, resize < cmd - t         : chunkc set window_float_next 1; osascript -e 'tell application "System Events" to keystroke " " using {control down}'
 focus, grid, swap, warp, warpnf, resize < cmd - c         : chunkc tiling::desktop --create
 focus, grid, swap, warp, warpnf, resize < cmd - x         : chunkc tiling::desktop --annihilate
@@ -32,10 +33,10 @@ focus, grid, swap, warp, warpnf, resize < cmd + shift - r : echo -n exclamation 
 
 
 # open terminal using helper script
-default       < ctrl - return        : iterm-new-window
-default       < cmd - return         : chunkc set window_float_next 1; iterm-new-window
-default       < ctrl + shift - return: open -na Alacritty
-default       < cmd + shift - return : chunkc set window_float_next 1; open -na Alacritty
+default       < ctrl - return        : open -na Alacritty
+default       < cmd - return         : chunkc set window_float_next 1; open -na Alacritty
+default       < ctrl + shift - return: iterm-new-window
+default       < cmd + shift - return : chunkc set window_float_next 1; iterm-new-window
 
 # change focus of windows
 focus         < k                    : chunkc tiling::window --focus north
@@ -101,17 +102,15 @@ warp          < cmd - 5              : chunkc tiling::window --send-to-desktop 5
 warp          < cmd - 6              : chunkc tiling::window --send-to-desktop 6; chunkc tiling::desktop --focus 6
 warp          < cmd - 7              : chunkc tiling::window --send-to-desktop 7; chunkc tiling::desktop --focus 7
 warp          < cmd - 8              : chunkc tiling::window --send-to-desktop 8; chunkc tiling::desktop --focus 8
-warp          < cmd - 9              : chunkc tiling::window --send-to-desktop 8; chunkc tiling::desktop --focus 9
-warp          < cmd - 0              : chunkc tiling::window --send-to-desktop 9; chunkc tiling::desktop --focus 0
+warp          < cmd - 9              : chunkc tiling::window --send-to-desktop 9; chunkc tiling::desktop --focus 9
+warp          < cmd - 0              : chunkc tiling::window --send-to-desktop 10; chunkc tiling::desktop --focus 10
 
 # warp window to monitor and don't follow
 warpnf        < 1                    : chunkc tiling::window --send-to-monitor 1
 warpnf        < 2                    : chunkc tiling::window --send-to-monitor 2
 warpnf        < 3                    : chunkc tiling::window --send-to-monitor 3
-warpnf        < tab                  : chunkc tiling::window --send-to-monitor next
-warpnf        < shift - tab          : chunkc tiling::window --send-to-monitor prev
 
-# warp window to desktop and follow
+# warp window to desktop and don't follow
 warpnf        < cmd - 1              : chunkc tiling::window --send-to-desktop 1
 warpnf        < cmd - 2              : chunkc tiling::window --send-to-desktop 2
 warpnf        < cmd - 3              : chunkc tiling::window --send-to-desktop 3
