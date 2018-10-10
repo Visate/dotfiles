@@ -272,6 +272,9 @@ tmux_conf_copy_to_os_clipboard=false
 # -- user customizations -------------------------------------------------------
 # this is the place to override or undo settings
 
+# Set term title for dictation purposes
+tmux_conf_theme_terminal_title='#W -#T'
+
 # RGB 24-bit
 tmux_conf_theme_24b_colour=true
 
@@ -297,6 +300,13 @@ set -g history-limit 2000
 
 # start with mouse mode enabled
 set -g mouse on
+
+# only use C-b
+set -gu prefix2
+unbind C-a
+unbind C-b
+set -g prefix C-b
+bind C-b send-prefix
 
 # move status to top
 set -g status-position top

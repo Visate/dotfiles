@@ -20,6 +20,10 @@ set foldcolumn=1
 set background=dark
 set termguicolors
 
+" Term titles
+autocmd BufEnter * let &titlestring = ' ' . expand("%:t")
+set title
+
 " Enable scrolling
 set mouse=a
 
