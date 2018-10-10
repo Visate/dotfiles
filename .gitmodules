@@ -55,3 +55,9 @@
 [submodule "zsh/.zprezto"]
 	path = zsh/.zprezto
 	url = https://github.com/sorin-ionescu/prezto.git
+[submodule "nvim/bundle/ale"]
+	path = nvim/bundle/ale
+	url = https://github.com/w0rp/ale.git
+[submodule "nvim/bundle/lightline-ale"]
+	path = nvim/bundle/lightline-ale
+	url = https://github.com/maximbaz/lightline-ale.git
