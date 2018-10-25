@@ -42,6 +42,10 @@ function nvimdots {
     nvim ~/.dotfiles/$1
 }
 
+if [ $commands[kubectl] ]; then
+  source <(kubectl completion zsh)
+fi
+
 alias pydt="python -m doctest -v"
 alias ipy="python -c 'import IPython; IPython.terminal.ipapp.launch_new_instance()'"
 

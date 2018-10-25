@@ -273,7 +273,7 @@ tmux_conf_copy_to_os_clipboard=false
 # this is the place to override or undo settings
 
 # Set term title for dictation purposes
-tmux_conf_theme_terminal_title='#W -#T'
+tmux_conf_theme_terminal_title='(#W) #T'
 
 # RGB 24-bit
 tmux_conf_theme_24b_colour=true
