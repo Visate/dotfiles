@@ -9,18 +9,13 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
-# Start ssh-agent and add keys if it is not up
-if [[ -z $SSH_AUTH_SOCK ]]; then
-    eval `ssh-agent -s`
-    ssh-add
-fi
-
 alias edit="nvim"
 alias cd..="cd .."
 alias rm="rm"
 alias t="tmux"
 alias ta="tmux a"
 alias tl="tmux ls"
+alias n="nvim"
 alias s="ssh"
 alias shosts="grep -P '^Host ([^*]+)$' $HOME/.ssh/config | sed 's/Host //'"
 alias aliases="alias | less"
@@ -36,10 +31,6 @@ function dev {
 
 function dots {
     cd ~/.dotfiles/$1
-}
-
-function nvimdots {
-    nvim ~/.dotfiles/$1
 }
 
 if [ $commands[kubectl] ]; then
