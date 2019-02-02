@@ -17,7 +17,7 @@ chunkc core::hotload 0
 
 # NOTE: the following are config variables for the chunkwm-tiling plugin.
 chunkc set custom_bar_enabled            0
-chunkc set custom_bar_all_monitors       0
+chunkc set custom_bar_all_monitors       1
 chunkc set custom_bar_offset_top         22
 chunkc set custom_bar_offset_bottom      0
 chunkc set custom_bar_offset_left        0
@@ -71,7 +71,10 @@ chunkc set focused_border_skip_monocle   1
 chunkc core::load border.so
 chunkc core::load tiling.so
 
-# NOTE: rules for the tiling plugin
+# NOTE: rules for desktop tiling modes
+chunkc set 1_desktop_mode monocle
+
+# NOTE: rules for program tiling modes
 chunkc tiling::rule --owner \"System Preferences\" --state float
 chunkc tiling::rule --owner Finder --state float
 chunkc tiling::rule --owner \"App Store\" --state float
@@ -84,5 +87,10 @@ chunkc tiling::rule --owner Spark --state float
 chunkc tiling::rule --owner Steam --state float
 chunkc tiling::rule --owner \"VNC Viewer\" --state float
 chunkc tiling::rule --owner \"Java Control Panel\" --state float
+chunkc tiling::rule --owner WeChat --state float
+chunkc tiling::rule --owner \"League of Legends\" --state float
+chunkc tiling::rule --owner IINA --state float
+chunkc tiling::rule --owner \"Illustrator CC\" --state float
 
+# NOTE: send response to AnyBar to indicate loading complete
 echo -n black | nc -4u -w0 localhost 1738

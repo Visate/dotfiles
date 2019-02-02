@@ -33,6 +33,10 @@ focus, grid, swap, warp, warpnf, resize < cmd + shift - r : echo -n exclamation 
 
 
 # open terminal using helper script
+# default       < ctrl - return        : iterm-new-window
+# default       < cmd - return         : chunkc set window_float_next 1; iterm-new-window
+# default       < ctrl + shift - return: open -na Alacritty
+# default       < cmd + shift - return : chunkc set window_float_next 1; open -na Alacritty
 default       < ctrl - return        : open -na Alacritty
 default       < cmd - return         : chunkc set window_float_next 1; open -na Alacritty
 default       < ctrl + shift - return: iterm-new-window
