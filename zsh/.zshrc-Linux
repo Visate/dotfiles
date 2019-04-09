@@ -1,3 +1,5 @@
 # Things for Linux
 alias pbcopy="xclip -selection clipboard"
+alias en="LANGUAGE=en_US:en"
 
+[ -f /etc/profile.d/autojump.sh ] && . /etc/profile.d/autojump.sh
