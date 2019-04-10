@@ -39,7 +39,7 @@
 	url = https://github.com/tpope/vim-markdown.git
 [submodule "nvim/bundle/vim-material-monokai"]
 	path = nvim/bundle/vim-material-monokai
-	url = github:Visate/vim-material-monokai
+	url = https://github.com/Visate/vim-material-monokai
 [submodule "nvim/bundle/vim-monokai"]
 	path = nvim/bundle/vim-monokai
 	url = https://github.com/crusoexia/vim-monokai.git
